@@ -1,0 +1,8 @@
+{% form_theme form 'tailwind_2_layout.html.twig' %}
+<div class="m-1">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>
+
