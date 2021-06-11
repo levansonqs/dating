@@ -1,5 +1,5 @@
 - src: DavidWittman.redis
-  version: 2.4.0
+  version: 1.2.8
 
 - src: ansistrano.deploy
   version: 3.10.0

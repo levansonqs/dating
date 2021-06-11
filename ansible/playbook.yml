@@ -134,7 +134,7 @@
                 working_dir: "/home/{{ ansible_user }}"
                 command: self-update
             register: composer_self_update
-            changed_when: "not composer_self_update.stdout|search('You are already using composer version')"
+            changed_when: "composer_self_update.stdout is not search('You are already using composer version')"
 
         -   name: Set GitHub OAuth token for Composer
             composer:
@@ -145,10 +145,6 @@
                 - github_oauth
 
         # Node
-        -   name: Register NodeJS distribution
-            shell: 'curl -sL https://deb.nodesource.com/setup_setup_16.x | sudo -E bash -'
-            changed_when: false
-
         -   name: Install NodeJS
             become: true
             apt:
